@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+		<header class="row">
+			<div class="col-lg-offset-2 col-lg-8 green">
+				<h2>LingBOT</h2>
+			</div>
+		</header>
+	<section class="row">
+		<div class="col-lg-offset-2 col-lg-8 form-class green">
+		<%= yield %>
+		</div>
+	</section>
+	<footer class="row">
+		<div class="col-lg-offset-2 col-lg-8 green">
+			<p>Authors: Hassler, Luisa, Jamie, Ben</p>
+		</div>
+	</footer>
+</div>
+</body>
+</html>

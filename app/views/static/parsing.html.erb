@@ -1,0 +1,106 @@
+<% flash.each do |key, msg| %>
+	<%= content_tag :div, msg, class: key %> 
+<% end %>
+<%= form_tag("/", method: "post", class: "col-lg-12 inline tree_form", id: "parsing") do %>
+	<%= text_field_tag(:text_to_parse, nil,  class: "form-control", name: "asdf", placeholder: "Type a sentence to draw its parse tree") %>
+	<br>
+	<%= radio_button_tag(:grammar, "1") %>
+	<%= label_tag(:grammar_1, "Grammar 1 (simple, but no adverbs or conjunctions)") %>
+	<br>
+	<%= radio_button_tag(:grammar, "2") %>
+	<%= label_tag(:grammar_2, "Grammar 2 (somewhat complex)") %>
+	<br>
+	<%= radio_button_tag(:grammar, "3") %>
+	<%= label_tag(:grammar_3, "Grammar 3 (complex but less restrictive)") %>
+	<%= submit_tag "Draw Tree", class: "col-lg-offset-10 col-lg-2 submit draw_tree", id: "parsing-submit-button" %>
+	<hr><hr><hr>
+<% end %>
+<div id="result"></div>
+<hr>
+<div id="vocabulary" class="row">
+	<div id="determiners" class="col-lg-2">
+		Determiners:<br>
+		<% if !@words["determiners"].blank? %>
+			  <% @words["determiners"].each do |w| %>
+				<%= w %>
+			    <br>
+			  <% end %>
+			<% end %>
+	</div>
+	<br>
+	<div id="nouns" class="col-lg-2">
+		Nouns:<br>
+		<% if !@words["nouns"].blank? %>
+			  <% @words["nouns"].each do |w| %>
+				<%= w %>
+			    <br>
+			  <% end %>
+			<% end %>
+	</div>
+	<br>
+	<div id="verbs" class="col-lg-2">
+		Verbs:<br>
+		<% if !@words["verbs"].blank? %>
+			  <% @words["verbs"].each do |w| %>
+				<%= w %>
+			    <br>
+			  <% end %>
+			<% end %>
+	</div>
+	<br>
+	<div id="auxiliary-verbs" class="col-lg-2">
+		Auxiliary verbs:<br>
+		<% if !@words["auxverbs"].blank? %>
+			  <% @words["auxverbs"].each do |w| %>
+				<%= w %>
+			    <br>
+			  <% end %>
+			<% end %>
+	</div>
+	<br>
+	<div id="adjectives" class="col-lg-2">
+		Adjectives:<br>
+		<% if !@words["adjectives"].blank? %>
+			  <% @words["adjectives"].each do |w| %>
+				<%= w %>
+			    <br>
+			  <% end %>
+			<% end %>
+	</div>
+	<br>
+	<div id="adverbs" class="col-lg-2">
+		Adverbs:<br>
+		<% if !@words["adverbs"].blank? %>
+			  <% @words["adverbs"].each do |w| %>
+				<%= w %>
+			    <br>
+			  <% end %>
+			<% end %>
+	</div>
+	<br>
+	<div id="conjunctions" class="col-lg-2">
+		Conjunctions:<br>
+		<% if !@words["conjunctions"].blank? %>
+			  <% @words["conjunctions"].each do |w| %>
+				<%= w %>
+			    <br>
+			  <% end %>
+			<% end %>
+	</div>
+	<br>
+	<div id="prepositions" class="col-lg-2">
+		Prepositions:<br>
+		<% if !@words["prepositions"].blank? %>
+			  <% @words["prepositions"].each do |w| %>
+				<%= w %>
+			    <br>
+			  <% end %>
+			<% end %>
+	</div>
+	<br>
+</div>
+<div id="survey"><strong>Ready to move on? Go to <%= link_to 'the phonology portion', phonology_path %>.</strong></div>
+
+
+
+

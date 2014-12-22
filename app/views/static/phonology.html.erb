@@ -1,0 +1,98 @@
+<% flash.each do |key, msg| %>
+	<%= content_tag :div, msg, class: key %> 
+<% end %>
+
+<p>This program will tell you whether the distribution of two sounds are the same.
+	Below are a list of sounds and how they're pronounced. Click a sound to insert it into the current text area.</p>
+
+<%= form_tag("/", method: "post", class: "col-lg-12 inline phonology_form", id: "phonology") do %>
+	First sound: <%= text_field_tag(:first_phone, nil,  class: "form-control ipa_fields", field_selected: "false", maxlength: 2, size: 2, placeholder: "e.g.   tʃ") %>
+	Second sound: <%= text_field_tag(:second_phone, nil,  class: "form-control ipa_fields", field_selected: "false", maxlength: 2, size: 2, placeholder: "e.g.   ə") %>
+	<br>
+	English words (you don't have to fill in all the boxes):
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word0, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_0"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word1, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_1"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word2, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_2"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word3, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_3"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word4, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_4"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word5, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_5"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word6, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_6"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word7, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_7"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word8, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_8"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="english_ipa_fields">
+			<%= text_field_tag(:word9, nil,  class: "form-control english_fields col-lg-6", placeholder: "English word") %>
+			<div class="ipa_results col-lg-4" id="ipa_9"></div>
+		</div>
+	</div>
+	<%= submit_tag "Compute", class: "col-lg-offset-10 col-lg-2 submit compute", id: "phonology_submit_button" %>
+	<hr><hr><hr>
+<% end %>
+<div id="result"></div>
+<br><br><br>
+<div id="sounds" class="row">
+	<% soundCounter = 0 %>
+	<div class="col-lg-4">
+	<% if !@sounds.blank? %>
+	  <% @sounds.each do |sound| %>
+	    <button class="ipa_sounds"><%= sound[0] %></button> as in <%= sound[2].html_safe %>
+	    <br>
+	    <% soundCounter += 1 %>
+	    <% if soundCounter % 10 == 0 %>
+	    	</div><div class="col-lg-4">
+	    <% end %>
+	  <% end %>
+	</div>
+	<% end %>
+</div>
+
+<div id="survey"><strong>Ready to finish? Please complete <a href="http://goo.gl/forms/DibT5yBkMk">this survey</a> again.</strong></div>
+
+
+
+

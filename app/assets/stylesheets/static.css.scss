@@ -1,0 +1,80 @@
+// Place all the styles related to the static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+
+@font-face{
+	font-family: "FiraSans-Medium";
+	src: url("FiraSans-Medium.ttf");
+}
+
+@font-face{
+	font-family: "FiraSans-Regular";
+	src: url("FiraSans-Regular.ttf");
+}
+
+body{
+	background-color: #f2f4f6;
+}
+
+.green{
+	border: 2px solid gray;
+}
+
+header{
+	font-family: "FiraSans-Medium";
+	margin-top: 50px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+section{
+	font-family: "FiraSans-Regular";
+	.submit{
+		margin-top: 3px;
+		border-radius: 3px;	
+	}
+}
+
+.bg-success{
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.survey_form{
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	font-size: 13px;
+	line-height: 1.428571429;
+	word-break: break-all;
+	word-wrap: break-word;
+	color: #333333;
+	background-color: whitesmoke;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+
+.ipa_fields {
+	width: 75px;
+}
+.english_fields {
+	width: 300px;
+}
+.ipa_results {
+	width: 200px;
+}
+
+.form-class{
+	padding: 20px;
+}
+
+footer{
+	font-family: "FiraSans-Regular";
+	margin-top: 10px;
+}
+
+header, footer{
+	text-align: center;
+}

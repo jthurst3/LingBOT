@@ -1,0 +1,27 @@
+<p>Statistics</p>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td> User </td>
+			<td> Question 1 </td>
+			<td> Question 2 </td>
+			<td> Question 3 </td>
+			<td> Question 4 </td>
+			<td> Question 5 </td>
+			<td> Question 6 </td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @logs.each do |l| %>
+			<tr>
+				<td><%= l.id %></td>
+				<td><%= l.q1 %></td>
+				<td><%= l.q2 %></td>
+				<td><%= l.q3 %></td>
+				<td><%= l.q4 %></td>
+				<td><%= l.q5 %></td>
+				<td><%= l.q6 %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
