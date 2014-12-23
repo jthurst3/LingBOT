@@ -11,20 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206021648) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "logs", force: true do |t|
-    t.string   "q1"
-    t.string   "q2"
-    t.string   "q3"
-    t.string   "q4"
-    t.string   "q5"
-    t.string   "q6"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
