@@ -52,3 +52,5 @@ gem 'spring',        group: :development
 
 gem 'unicorn'
 
+ruby '2.0.0'
+
