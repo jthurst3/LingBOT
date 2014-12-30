@@ -1,6 +1,15 @@
-<h1>Welcome to our app!</h1>
-<p>Before you start using our app, please take <a href="https://docs.google.com/a/u.rochester.edu/forms/d/18ZlKe1V8I0eqJ9M0atgMmX7uzKW_evqlHzytrY1kaFc/viewform">this survey</a>.</p>
+<h1>Welcome to LingBOT!</h1>
+<p>LingBOT is a simple web application designed to help you learn linguistics concepts. So far, it can help teach you <%= link_to 'how to parse English sentences', parsing_path %> and <%= link_to 'how to determine the distribution of two sounds in English', phonology_path %>. To start learning, please click on one of the following modules and follow the instructions on the given page.</p>
+<!-- <p>Before you start using our app, please take <a href="https://docs.google.com/a/u.rochester.edu/forms/d/18ZlKe1V8I0eqJ9M0atgMmX7uzKW_evqlHzytrY1kaFc/viewform">this survey</a>.</p> -->
 
-
+<p>Modules:</p>
+<ul>
+	<li>
+		<%= link_to 'Parsing', parsing_path %>
+	</li>
+	<li>
+		<%= link_to 'Phonology', phonology_path %>
+	</li>
+</ul>
 
 
