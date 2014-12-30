@@ -21,3 +21,7 @@
 
 # secrets
 config/secrets.yml
+
+# logs
+bin/parsing_queries.txt
+bin/phonology_queries.txt
