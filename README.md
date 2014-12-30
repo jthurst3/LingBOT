@@ -1,8 +1,12 @@
-== README
-Linguistics app to learn about english parse trees.
+LingBOT
+-------
 
-INSTALL:
-After pulling, use
-->cd app
-->rails s
-goto localhost:3000 in your browser
+Linguistics app to learn about english parse trees and phonology.
+
+INSTALLING:
+After pulling, execute
+```
+$ cd app
+$ rails s
+```
+Then go to `localhost:3000` in your browser
