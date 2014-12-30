@@ -21,5 +21,8 @@ module App
     # config.i18n.default_locale = :de
 
     config.encoding = "utf-8"
+
+    # asset pipeline compatibility
+    config.assets.precompile += %w(*.ttf)
   end
 end
